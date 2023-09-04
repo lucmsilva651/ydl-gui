@@ -11,6 +11,7 @@ app_description = app_identifier + "A modular script to download videos from mul
 app_github_repo = "lucmsilva651/ydl-gui"
 app_str_github_link = "https://github.com/"
 app_str_dot = " - "
+app_str_about = app_name + app_str_dot + "by " + app_developer
 app_str_warningdialog_title = "Warning!"
 app_str_warningdialog_content = "If the application becomes unresponsive during the download process, simply wait for the download to complete or check the terminal for progress."
 app_str_videourl_request = "Insert the video URL:"
@@ -20,10 +21,12 @@ app_str_downloadvideo_btn = "Download video"
 app_str_downloadcompletedialog_title = "Download complete"
 app_str_downloadcompletedialog_content1 = "The video "
 app_str_downloadcompletedialog_content2 = " has been downloaded with success!"
+app_window_resizable_x = False
+app_window_resizable_y = False
 app_window_title = app_name + app_str_dot + app_short_developer + app_str_dot + app_version
 app_window_width = 400
 app_window_height = 200
-app_outputdir = "videos"
+app_output_dir = "videos"
 
 class YouTubeDownloaderApp:
     def __init__(self, root):
@@ -32,20 +35,24 @@ class YouTubeDownloaderApp:
 
         self.root = root
         self.root.title(app_window_title)
+        root.resizable(app_window_resizable_x, app_window_resizable_y)
         tk.messagebox.showwarning(app_str_warningdialog_title, app_str_warningdialog_content)
         self.label = tk.Label(root, text=app_str_videourl_request)
         self.label.pack(pady=10)
 
         self.url_entry = tk.Entry(root, width=40)
-        self.url_entry.pack(pady=5)
+        self.url_entry.pack(pady=10)
 
         self.browse_button = tk.Button(root, text=app_str_seloutput_btn, command=self.choose_directory)
-        self.browse_button.pack(pady=10)
+        self.browse_button.pack(pady=5)
 
         self.download_button = tk.Button(root, text=app_str_downloadvideo_btn, command=self.download_video)
-        self.download_button.pack()
+        self.download_button.pack(pady=15)
 
-        self.output_directory = app_outputdir
+        self.about_text = tk.Label(root, text=app_str_about)
+        self.about_text.pack()
+
+        self.output_directory = app_output_dir
 
     def choose_directory(self):
         self.output_directory = filedialog.askdirectory()
