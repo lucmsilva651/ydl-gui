@@ -28,7 +28,7 @@ if '%errorlevel%' NEQ '0' (
     pushd "%CD%"
     CD /D "%~dp0"
 :--------------------------------------
-title ydl-cli
+title ydl-gui
 cd modules
 startInstall
 pause
