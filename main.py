@@ -7,7 +7,7 @@ app_developer = "Lucas Gabriel (lucmsilva)"
 app_short_developer = "lucmsilva"
 app_identifier = "[" + app_name + "] "
 app_version = "v0.0.0"
-app_description = app_identifier + "description"
+app_description = app_identifier + "A modular script to download videos from multiple sites via GUI. Forked from ydl-cli"
 app_github_repo = "lucmsilva651/ydl-gui"
 app_str_github_link = "https://github.com/"
 app_str_dot = " - "
@@ -28,7 +28,7 @@ app_outputdir = "videos"
 class YouTubeDownloaderApp:
     def __init__(self, root):
         center_window(root, app_window_width, app_window_height)
-        print(app_identifier + app_window_title + "\n" + app_str_github_link + app_github_repo + "\n\n" + app_description)
+        print(app_identifier + app_window_title + "\n" + app_identifier + app_str_github_link + app_github_repo + "\n\n" + app_description + "\n")
 
         self.root = root
         self.root.title(app_window_title)
