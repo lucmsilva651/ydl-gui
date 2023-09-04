@@ -41,10 +41,10 @@ class YouTubeDownloaderApp:
         self.label.pack(pady=10)
 
         self.url_entry = tk.Entry(root, width=40)
-        self.url_entry.pack(pady=10)
+        self.url_entry.pack(pady=15)
 
         self.browse_button = tk.Button(root, text=app_str_seloutput_btn, command=self.choose_directory)
-        self.browse_button.pack(pady=5)
+        self.browse_button.pack()
 
         self.download_button = tk.Button(root, text=app_str_downloadvideo_btn, command=self.download_video)
         self.download_button.pack(pady=15)
